@@ -125,7 +125,8 @@ object StringUtil {
                 + place.latLng.longitude
                 + " ("
                 + place.address
-                + ")")
+                + ") with PlusCode "
+                + place.plusCode)
     }
 
     fun stringifyAutocompleteWidget(place: Place, raw: Boolean): String {

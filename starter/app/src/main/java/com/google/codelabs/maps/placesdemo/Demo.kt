@@ -24,5 +24,24 @@ enum class Demo(
     @StringRes val description: Int,
     val activity: Class<out Activity>
 ) {
-
+    DETAILS_FRAGMENT_DEMO(
+        R.string.details_demo_title,
+        R.string.details_demo_description,
+        DetailsActivity::class.java
+    ),
+    AUTOCOMPLETE_FRAGMENT_DEMO(
+        R.string.autocomplete_fragment_demo_title,
+        R.string.autocomplete_fragment_demo_description,
+        AutocompleteActivity::class.java
+    ),
+    CURRENT_FRAGMENT_DEMO(
+        R.string.current_demo_title,
+        R.string.current_demo_description,
+        CurrentPlaceActivity::class.java
+    ),
+    LATLONG_FRAGMENT_DEMO(
+        R.string.latlong_demo_title,
+        R.string.latlong_demo_description,
+        LatLongActivity::class.java
+    )
 }

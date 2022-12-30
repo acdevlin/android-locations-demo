@@ -22,6 +22,8 @@
     <string name="autocomplete_fragment_demo_description">Provide type-ahead predictions of Places as the user types in an input field.</string>
     <string name="current_demo_title">Current Place</string>
     <string name="current_demo_description">Suggest possible places that match the device\'s current location</string>
+    <string name="latlong_demo_title">Bypass Place API</string>
+    <string name="latlong_demo_description">Get PlusCode data while offline</string>
     <string name="button_details">Get Details</string>
     <string name="details_input_hint">Enter a Place ID</string>
     <string name="details_input_default">ChIJ-fIL2vnvTxkRaNUY32NGBYs</string>
