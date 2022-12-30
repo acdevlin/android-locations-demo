@@ -28,4 +28,6 @@
     <string name="details_input_hint">Enter a Place ID</string>
     <string name="details_input_default">ChIJ-fIL2vnvTxkRaNUY32NGBYs</string>
     <string name="current_button">Get Current Place</string>
+    <string name="offline_usage_text">This can be used while offline!</string>
+    <string name="get_gps_location_text">Get GPS Location</string>
 </resources>
