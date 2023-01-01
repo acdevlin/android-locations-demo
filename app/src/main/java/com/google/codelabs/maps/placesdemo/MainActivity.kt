@@ -71,4 +71,8 @@ class MainActivity : AppCompatActivity() {
                 .inflate(R.layout.item_demo, this)
         }
     }
+
+    companion object {
+        const val LOCATION_SETTING_REQUEST = 999
+    }
 }
