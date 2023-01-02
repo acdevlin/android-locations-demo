@@ -3,30 +3,23 @@ package com.google.codelabs.maps.placesdemo
 
 import android.Manifest
 import android.content.Context
-import android.content.Intent
 import android.content.IntentSender
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationManager
 import android.os.Bundle
-import android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.google.android.gms.common.api.GoogleApi
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.openlocationcode.OpenLocationCode
-import android.provider.Settings
-import android.system.Os.accept
-import android.util.Log
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
 import com.google.android.gms.tasks.Task
 import com.google.codelabs.maps.placesdemo.MainActivity.Companion.LOCATION_SETTING_REQUEST
-import kotlinx.coroutines.NonCancellable.cancel
+import com.google.openlocationcode.OpenLocationCode
 
 
 class LatLongActivity : AppCompatActivity() /*, LocationListener*/ {
@@ -105,7 +98,7 @@ class LatLongActivity : AppCompatActivity() /*, LocationListener*/ {
 
     private fun onLocationChanged(location: Location) {
         tvGpsLocation = findViewById(R.id.latLongTextView)
-        val plusCode = OpenLocationCode.encode(location.latitude, location.longitude)
+        val plusCode = OpenLocationCode(location.latitude, location.longitude, CODE_PRECISION_NORMAL)
         val preciseCode =
             OpenLocationCode(location.latitude, location.longitude, CODE_PRECISION_EXTRA)
         tvGpsLocation.text =
