@@ -30,4 +30,6 @@
     <string name="current_button">Get Current Place</string>
     <string name="offline_usage_text">This can be used while offline!</string>
     <string name="get_gps_location_text">Get GPS Location</string>
+    <string name="map_fragment_demo_title">"PlusCode Map"</string>
+    <string name="map_fragment_demo_description">"A map showing a grid of plus codes</string>
 </resources>

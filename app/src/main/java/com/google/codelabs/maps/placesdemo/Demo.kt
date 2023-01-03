@@ -43,5 +43,10 @@ enum class Demo(
         R.string.latlong_demo_title,
         R.string.latlong_demo_description,
         LatLongActivity::class.java
+    ),
+    MAP_FRAGMENT_DEMO(
+        R.string.map_fragment_demo_title,
+        R.string.map_fragment_demo_description,
+        MapActivity::class.java
     )
 }

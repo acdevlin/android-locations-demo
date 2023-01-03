@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <NetworkLink>
+    <name>Plus Code KML Grid Service</name>
+    <description>Fetches the plus code grid and displays it over the map. Updates when the map is moved or zoomed. Click on a grid square to see its reference.</description>
+    <visibility>1</visibility>
+    <open>0</open>
+    <refreshVisibility>0</refreshVisibility>
+    <flyToView>0</flyToView>
+    <Link>
+      <href>https://grid.plus.codes/kml</href>
+      <viewRefreshMode>onStop</viewRefreshMode>
+      <viewRefreshTime>2</viewRefreshTime>
+    </Link>
+  </NetworkLink>
+</kml>

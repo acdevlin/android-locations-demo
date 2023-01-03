@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  Copyright 2022 Google LLC
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +17,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.google.codelabs.maps.placesdemo">
 
-    <uses-permission
-        android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:name=".DemoApplication"
@@ -29,6 +28,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PlacesDemo">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${GOOGLE_MAPS_API_KEY}" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -41,5 +43,6 @@
         <activity android:name=".AutocompleteActivity" />
         <activity android:name=".CurrentPlaceActivity" />
         <activity android:name=".LatLongActivity" />
+        <activity android:name=".MapActivity" />
     </application>
 </manifest>
