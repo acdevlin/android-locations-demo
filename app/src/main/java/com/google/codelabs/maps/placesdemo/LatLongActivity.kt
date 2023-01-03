@@ -44,6 +44,10 @@ class LatLongActivity : AppCompatActivity() /*, LocationListener*/ {
         val button: Button = findViewById(R.id.getLocation)
         button.setOnClickListener { getLocation() }
 
+        enableLocation()
+    }
+
+    private fun enableLocation() {
         // Prompt user to enable location settings if needed
         val locationRequest = LocationRequest.create()
         locationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
@@ -76,15 +80,20 @@ class LatLongActivity : AppCompatActivity() /*, LocationListener*/ {
         if ((ContextCompat.checkSelfPermission(
                 this,
                 Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED) && (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_COARSE_LOCATION
             ) != PackageManager.PERMISSION_GRANTED)
         ) {
             ActivityCompat.requestPermissions(
                 this,
-                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                arrayOf(
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION
+                ),
                 locationPermissionCode
             )
         }
-        // locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 5f, this)
         fusedLocationClient.lastLocation
             .addOnSuccessListener { location: Location? ->
                 if (location == null) {
@@ -98,7 +107,8 @@ class LatLongActivity : AppCompatActivity() /*, LocationListener*/ {
 
     private fun onLocationChanged(location: Location) {
         tvGpsLocation = findViewById(R.id.latLongTextView)
-        val plusCode = OpenLocationCode(location.latitude, location.longitude, CODE_PRECISION_NORMAL)
+        val plusCode =
+            OpenLocationCode(location.latitude, location.longitude, CODE_PRECISION_NORMAL)
         val preciseCode =
             OpenLocationCode(location.latitude, location.longitude, CODE_PRECISION_EXTRA)
         tvGpsLocation.text =
